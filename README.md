@@ -236,7 +236,7 @@ pnpm run bench
 
 ## Requirements
 
-- Node.js >= 18
+- Node.js ^20.19.0 || >= 22.12.0
 - Works in browsers (ESM)
 - TypeScript >= 5.0 for type inference
 

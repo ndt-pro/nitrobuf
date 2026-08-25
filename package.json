@@ -62,8 +62,8 @@
     "prepublishOnly": "pnpm run build"
   },
   "devDependencies": {
-    "@commitlint/cli": "^21.2.2",
-    "@commitlint/config-conventional": "^21.2.2",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
     "fast-check": "^4.9.0",
     "husky": "^9.1.7",
     "oxfmt": "^0.65.0",
@@ -83,7 +83,7 @@
     }
   },
   "engines": {
-    "node": ">=18",
+    "node": "^20.19.0 || >=22.12.0",
     "pnpm": ">=10"
   },
   "packageManager": "pnpm@10.11.0",
