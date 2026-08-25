@@ -1,0 +1,25 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["eslint", "typescript", "unicorn", "oxc", "import", "node"],
+  "env": {
+    "shared-node-browser": true
+  },
+  "ignorePatterns": ["dist/**", "coverage/**"],
+  "categories": {
+    "correctness": "error"
+  },
+  "rules": {
+    "typescript/no-explicit-any": "off",
+    "eslint/no-unused-vars": "warn",
+    "unicorn/no-new-array": "off"
+  },
+  "overrides": [
+    {
+      "files": ["test/**", "bench/**"],
+      "plugins": ["eslint", "typescript", "unicorn", "oxc", "import", "node", "vitest"],
+      "env": {
+        "vitest": true
+      }
+    }
+  ]
+}

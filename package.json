@@ -1,0 +1,95 @@
+{
+  "name": "nitrobuf",
+  "version": "0.1.0",
+  "description": "Fast, lightweight binary serialization with inline TypeScript schemas",
+  "keywords": [
+    "binary",
+    "decode",
+    "encode",
+    "fast",
+    "msgpack",
+    "protobuf",
+    "schema",
+    "serialization",
+    "socket.io",
+    "typescript"
+  ],
+  "license": "MIT",
+  "author": "Deelux",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./socket.io": {
+      "import": {
+        "types": "./dist/socket.io.d.ts",
+        "default": "./dist/socket.io.js"
+      },
+      "require": {
+        "types": "./dist/socket.io.d.cts",
+        "default": "./dist/socket.io.cjs"
+      }
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "bench": "vitest bench",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check",
+    "typecheck": "tsc --noEmit",
+    "prepare": "husky",
+    "prepublishOnly": "pnpm run build"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^21.2.2",
+    "@commitlint/config-conventional": "^21.2.2",
+    "fast-check": "^4.9.0",
+    "husky": "^9.1.7",
+    "oxfmt": "^0.65.0",
+    "oxlint": "^1.80.0",
+    "socket.io": "^4.8.3",
+    "socket.io-client": "^4.8.3",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.0",
+    "vitest": "^3.2.0"
+  },
+  "peerDependencies": {
+    "socket.io-parser": ">=4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "socket.io-parser": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=10"
+  },
+  "packageManager": "pnpm@10.11.0",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
+}
